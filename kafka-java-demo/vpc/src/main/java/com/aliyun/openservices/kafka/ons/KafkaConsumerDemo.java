@@ -20,7 +20,7 @@ public class KafkaConsumerDemo {
         //设置接入点，请通过控制台获取对应Topic的接入点
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaProperties.getProperty("bootstrap.servers"));
 
-        //可更加实际拉去数据和客户的版本等设置此值，默认30s
+        //可根据实际拉取数据和客户的版本等设置此值，默认30s
         props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, 30000);
         //每次poll的最大数量
         //注意该值不要改得太大，如果poll太多数据，而不能在下次poll之前消费完，则会触发一次负载均衡，产生卡顿
